@@ -26,7 +26,9 @@ Data files are too large for GitHub, so they stay on the local machine.
 python scripts/01_download_sources.py
 ```
 
-This downloads the SILO, TERN wind, TERN vegetation and TERN burnt area files. It can be re-run safely: finished files are skipped and partial files resume. The NSW NPWS fire history and the ELVIS DEM are downloaded by hand in a browser into `data/raw/npws_fire_history/` and `data/raw/elvis_dem/`.
+This downloads the SILO, TERN wind, TERN vegetation, TERN burnt area, NSW NPWS and elevation files, about 81 GB in total. It can be re-run safely: finished files are skipped and partial files resume.
+
+ELVIS limits searches to about 1.5 degrees square, too small for one NSW-wide order. The DEM is therefore the same product listed in ELVIS, the SRTM-derived Smoothed 1 Second DEM Version 1.0, downloaded as one national file directly from Geoscience Australia.
 
 ## Data sources
 
@@ -37,4 +39,4 @@ This downloads the SILO, TERN wind, TERN vegetation and TERN burnt area files. I
 | Vegetation cover | [TERN MODIS fractional cover](https://portal.tern.org.au/metadata/a6ef2480-e397-4c42-9706-3865dd6ca380) |
 | Fire label | [TERN burnt area and approximate day of burn](https://portal.tern.org.au/metadata/5e262fd7-261f-4c5d-81e7-fff2c6d54d32) |
 | Fire cross-check | [NSW NPWS fire history](https://www.data.nsw.gov.au/data/dataset/fire-history-wildfires-and-prescribed-burns-1e8b6) |
-| Elevation | [ELVIS](https://elevation.fsdf.org.au/) |
+| Elevation | [Smoothed 1 Second DEM](http://pid.geoscience.gov.au/dataset/ga/70715), listed in [ELVIS](https://elevation.fsdf.org.au/) |

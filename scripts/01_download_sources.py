@@ -27,6 +27,12 @@ VEGETATION = "https://thredds.nci.org.au/thredds/fileServer/tc43/modis-fc/v310/t
 VEGETATION_TILES = ["h29v12", "h30v11", "h30v12", "h31v11", "h31v12"]
 BURN_SERVER = "https://dap.tern.org.au/thredds"
 BURN_PATH = "landscapes/remote-sensing/modis/burnt_area/monthly"
+NPWS = (
+    "https://datasets.seed.nsw.gov.au/dataset/1d05e145-80cb-4275-af9b-327a1536798d/"
+    "resource/3853d6c0-6517-4cba-8482-68f93a6d43b1/download/fire_npwsfirehistory.zip"
+)
+
+DEM = "https://elevation-direct-downloads.s3-ap-southeast-2.amazonaws.com/1sec-dem/70715.zip"
 
 YEARS = range(2002, 2018)
 HEADERS = {"User-Agent": "nsw-bushfire-risk-mapping/1.0"}
@@ -55,6 +61,8 @@ def all_files():
         for year in YEARS:
             name = f"FC_Monthly_Medoid.v310.MCD43A4.{tile}.{year}.006.nc"
             files.append((f"{VEGETATION}/{name}", RAW / "tern_fractional_cover" / name))
+    files.append((NPWS, RAW / "npws_fire_history" / "fire_npwsfirehistory.zip"))
+    files.append((DEM, RAW / "ga_dem_s_1sec" / "70715.zip"))
     return files + burn_files()
 
 
