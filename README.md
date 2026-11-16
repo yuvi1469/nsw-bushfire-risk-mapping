@@ -5,7 +5,7 @@ Builds a historical pixel-day dataset for New South Wales, following the *NSW Bu
 - **Question:** does a 5 km map cell burn on a given day, using only information available before that day?
 - **Row:** one eligible 5 km cell on one date.
 - **Target:** a reproducible 1 million row sample, expanded to 2 million only if needed.
-- **Period:** August 2002 to February 2017, excluding 2009, 2010, 2014 and 2015, which have no burnt area files.
+- **Period:** 3,838 days in three blocks: Aug 2002 - Nov 2008, Dec 2010 - Nov 2013 and Dec 2015 - Jan 2017, where burn dates exist.
 
 ## Folders
 
@@ -30,6 +30,30 @@ This downloads the SILO, TERN wind, TERN vegetation, TERN burnt area, NSW NPWS a
 
 ELVIS limits searches to about 1.5 degrees square, too small for one NSW-wide order. The DEM is therefore the same product listed in ELVIS, the SRTM-derived Smoothed 1 Second DEM Version 1.0, downloaded as one national file directly from Geoscience Australia.
 
+## Running the workflow
+
+```bash
+python -m venv .venv
+.venv/Scripts/python -m pip install -r requirements.txt
+```
+
+Then run the scripts in `scripts/` in number order with `.venv/Scripts/python`. `grid.py` holds the shared grid settings and study period.
+
+| Script | Workflow step |
+|---|---|
+| `01_download_sources.py` | 2: download and checksum every source |
+| `02_inspect_sources.py` | 3.1: read each source's grid, units, nodata and dates |
+| `03_unpack_dem.py` | 3: unpack the Deflate64 DEM ZIP |
+| `04_check_burn_dates.py` | 3.7: compare burn dates with file names |
+| `05_define_grid.py` | 3.2: 5 km NSW grid |
+| `06_grid_weather.py` | 3.3-3.4: weather and wind on the grid |
+| `07_grid_vegetation.py` | 3.3-3.4: vegetation on the grid |
+| `08_terrain.py` | 3.4-3.5: elevation, slope and aspect |
+| `09_fire_label.py` | 3.7: fire label and NPWS cross-check |
+| `10_quality_checks.py` | 3.8: missingness and quality checks |
+
+Notes for each step are in `docs/`.
+
 ## Data sources
 
 | Layer | Source |
@@ -40,3 +64,4 @@ ELVIS limits searches to about 1.5 degrees square, too small for one NSW-wide or
 | Fire label | [TERN burnt area and approximate day of burn](https://portal.tern.org.au/metadata/5e262fd7-261f-4c5d-81e7-fff2c6d54d32) |
 | Fire cross-check | [NSW NPWS fire history](https://www.data.nsw.gov.au/data/dataset/fire-history-wildfires-and-prescribed-burns-1e8b6) |
 | Elevation | [Smoothed 1 Second DEM](http://pid.geoscience.gov.au/dataset/ga/70715), listed in [ELVIS](https://elevation.fsdf.org.au/) |
+| NSW boundary | [ABS state boundaries 2021](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files) |

@@ -33,6 +33,10 @@ NPWS = (
 )
 
 DEM = "https://elevation-direct-downloads.s3-ap-southeast-2.amazonaws.com/1sec-dem/70715.zip"
+STATES = (
+    "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/"
+    "jul2021-jun2026/access-and-downloads/digital-boundary-files/STE_2021_AUST_SHP_GDA2020.zip"
+)
 
 YEARS = range(2002, 2018)
 HEADERS = {"User-Agent": "nsw-bushfire-risk-mapping/1.0"}
@@ -63,6 +67,7 @@ def all_files():
             files.append((f"{VEGETATION}/{name}", RAW / "tern_fractional_cover" / name))
     files.append((NPWS, RAW / "npws_fire_history" / "fire_npwsfirehistory.zip"))
     files.append((DEM, RAW / "ga_dem_s_1sec" / "70715.zip"))
+    files.append((STATES, RAW / "abs_boundaries" / "STE_2021_AUST_SHP_GDA2020.zip"))
     return files + burn_files()
 
 

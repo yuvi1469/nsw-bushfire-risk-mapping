@@ -57,3 +57,16 @@ Weather for the first days after a gap, such as 7-day and 30-day rainfall in Jan
 - NPWS fields, coordinate system and whether a date field exists
 - ELVIS DEM product details
 - Missing dates inside the annual files; this check used file listings
+
+## Correction from Step 3
+
+Step 3 found that every burnt area file holds the burn dates for the month **before** its file name (checked for all 127 files; `outputs/burn_date_check.csv`). The study period therefore follows the burn dates inside the files, within the stated product period:
+
+| Block | Dates | Days |
+|---|---|---|
+| 1 | 1 Aug 2002 - 30 Nov 2008 | 2,314 |
+| 2 | 1 Dec 2010 - 30 Nov 2013 | 1,096 |
+| 3 | 1 Dec 2015 - 31 Jan 2017 | 428 |
+| **Total** | | **3,838** |
+
+This replaces the table above. The blocks are set in `scripts/grid.py`.
