@@ -74,6 +74,9 @@ def all_files():
 def remote_size(url):
     request = urllib.request.Request(url, headers={**HEADERS, "Range": "bytes=0-0"})
     with urllib.request.urlopen(request, timeout=120) as response:
+        # Some servers (ABS) ignore the range and send the whole file with its length.
+        if response.status == 200:
+            return int(response.headers["Content-Length"])
         return int(response.headers["Content-Range"].rsplit("/", 1)[1])
 
 
