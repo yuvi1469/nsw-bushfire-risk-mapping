@@ -1,4 +1,5 @@
 file,url,bytes,sha256,retrieval_date
+data/raw/abs_boundaries/STE_2021_AUST_SHP_GDA2020.zip,https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/STE_2021_AUST_SHP_GDA2020.zip,21559880,d9b7f735de6085b37414faf011f796dda3c7f768c55e9dce01f96e790f399a21,2026-11-17
 data/raw/ga_dem_s_1sec/70715.zip,https://elevation-direct-downloads.s3-ap-southeast-2.amazonaws.com/1sec-dem/70715.zip,44935860649,16400f42ae1140356a8aa7c82d384f6720a045f5fc8308c703dec7351fd14406,2026-11-09
 data/raw/npws_fire_history/fire_npwsfirehistory.zip,https://datasets.seed.nsw.gov.au/dataset/1d05e145-80cb-4275-af9b-327a1536798d/resource/3853d6c0-6517-4cba-8482-68f93a6d43b1/download/fire_npwsfirehistory.zip,61055746,20c698c2e8f0015414f2504eead281d0bac4998698cd1a13d2ceac0e592af656,2026-11-09
 data/raw/silo/daily_rain/2002.daily_rain.nc,https://s3-ap-southeast-2.amazonaws.com/silo-open-data/Official/annual/daily_rain/2002.daily_rain.nc,418145109,9dbbee840336c3dfa231ab29301809cf13f9505c2132791c9bb215d6dbe812a1,2026-11-09

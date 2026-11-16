@@ -74,14 +74,31 @@ def all_files():
 def remote_size(url):
     request = urllib.request.Request(url, headers={**HEADERS, "Range": "bytes=0-0"})
     with urllib.request.urlopen(request, timeout=120) as response:
-        # Some servers (ABS) ignore the range and send the whole file with its length.
-        if response.status == 200:
-            return int(response.headers["Content-Length"])
-        return int(response.headers["Content-Range"].rsplit("/", 1)[1])
+        if response.status == 206:
+            return int(response.headers["Content-Range"].rsplit("/", 1)[1])
+        # The ABS server ignores the range and streams the whole file without a length.
+        length = response.headers.get("Content-Length")
+        return int(length) if length else None
+
+
+def fetch_whole(url, path):
+    """For servers that give no size or resume: download in full and keep the result."""
+    part = path.with_name(path.name + ".part")
+    with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=120) as response, part.open("wb") as out:
+        while chunk := response.read(CHUNK):
+            out.write(chunk)
+    if path.exists() and sha256(path) == sha256(part):
+        part.unlink()
+        return url, path, path.stat().st_size, "already present"
+    part.replace(path)
+    return url, path, path.stat().st_size, "downloaded"
 
 
 def fetch(url, path):
     size = remote_size(url)
+    if size is None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        return fetch_whole(url, path)
     if path.exists() and path.stat().st_size == size:
         return url, path, size, "already present"
     path.parent.mkdir(parents=True, exist_ok=True)
