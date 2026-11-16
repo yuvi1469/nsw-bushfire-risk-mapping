@@ -1,6 +1,7 @@
 # Source and generated data are too large for GitHub.
 # inventory/download_manifest.csv records how to fetch and verify the source files.
 data/raw/*
+data/interim/*
 data/processed/*
 outputs/*
 !data/raw/.gitkeep
