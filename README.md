@@ -51,8 +51,10 @@ Then run the scripts in `scripts/` in number order with `.venv/Scripts/python`. 
 | `08_terrain.py` | 3.4-3.5: elevation, slope and aspect |
 | `09_fire_label.py` | 3.7: fire label and NPWS cross-check |
 | `10_quality_checks.py` | 3.8: missingness and quality checks |
+| `11_build_pixel_day_table.py` | 4: build the pixel-day table |
+| `12_check_pixel_day.py` | 4: check duplicates, leakage and values |
 
-Notes for each step are in `docs/`.
+Notes for each step are in `docs/`, and the table's fields are described in `docs/field_dictionary.md`.
 
 ## Data sources
 
