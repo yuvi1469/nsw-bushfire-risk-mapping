@@ -1,0 +1,179 @@
+{
+  "years": [
+    2003,
+    2012
+  ],
+  "blocks": [
+    14,
+    36
+  ],
+  "rows": 30000,
+  "burned_rows": 83,
+  "duplicate_cell_dates": 0,
+  "weather_is_previous_day": true,
+  "units": {
+    "max_temp_prev": "Celsius",
+    "rain": "mm",
+    "vp_prev": "hPa",
+    "wind_prev": "m/s",
+    "vegetation": "%",
+    "elevation": "m"
+  },
+  "value_ranges": {
+    "max_temp_prev": {
+      "min": 4.993,
+      "max": 45.652
+    },
+    "min_temp_prev": {
+      "min": -8.966,
+      "max": 31.0
+    },
+    "rain_prev": {
+      "min": 0.0,
+      "max": 100.718
+    },
+    "rain_7d": {
+      "min": 0.0,
+      "max": 256.505
+    },
+    "rain_30d": {
+      "min": 0.0,
+      "max": 522.976
+    },
+    "dry_days": {
+      "min": 0.0,
+      "max": 30.0
+    },
+    "vp_prev": {
+      "min": 3.483,
+      "max": 29.3
+    },
+    "wind_prev": {
+      "min": 1.0,
+      "max": 11.8
+    },
+    "pv": {
+      "min": 0.0,
+      "max": 98.067
+    },
+    "npv": {
+      "min": 0.101,
+      "max": 93.619
+    },
+    "bare_soil": {
+      "min": 0.0,
+      "max": 97.551
+    },
+    "total_cover": {
+      "min": 2.778,
+      "max": 99.831
+    },
+    "elevation": {
+      "min": 78.291,
+      "max": 1400.774
+    },
+    "slope_mean": {
+      "min": 0.003,
+      "max": 29.56
+    },
+    "slope_p90": {
+      "min": 0.005,
+      "max": 42.629
+    },
+    "aspect_sin": {
+      "min": -1.0,
+      "max": 0.997
+    },
+    "aspect_cos": {
+      "min": -0.79,
+      "max": 0.986
+    },
+    "burned_fraction": {
+      "min": 0.0,
+      "max": 0.625
+    },
+    "burned": {
+      "min": 0.0,
+      "max": 1.0
+    }
+  },
+  "feature_checks": {
+    "max_temp_prev": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "min_temp_prev": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "rain_prev": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "rain_7d": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "rain_30d": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "dry_days": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "vp_prev": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "wind_prev": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "pv": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "npv": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "bare_soil": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "total_cover": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "elevation": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "slope_mean": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "slope_p90": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "aspect_sin": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "aspect_cos": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "burned_fraction": {
+      "checked": 30000,
+      "mismatches": 0
+    },
+    "burned": {
+      "checked": 30000,
+      "mismatches": 0
+    }
+  },
+  "total_mismatches": 0
+}
