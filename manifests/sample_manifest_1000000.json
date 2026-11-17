@@ -14,16 +14,16 @@
     "veg_band": "tertile of the cell's mean total cover 2002-2008"
   },
   "fire_rule": "all training fire rows kept if they fit in half the sample, else proportional by stratum",
-  "fire_rows": 440370,
-  "unburned_rows": 559630,
+  "fire_rows": 440373,
+  "unburned_rows": 559627,
   "training_population": {
-    "rows": 58749227,
-    "burned": 440370,
-    "prevalence": 0.007495758199507885
+    "rows": 58749565,
+    "burned": 440373,
+    "prevalence": 0.007495766138864177
   },
-  "sample_prevalence_unweighted": 0.44037,
-  "sample_prevalence_weighted": 0.007495758199507885,
-  "weighted_rows": 58749227.0,
+  "sample_prevalence_unweighted": 0.440373,
+  "sample_prevalence_weighted": 0.007495766138864177,
+  "weighted_rows": 58749565.0,
   "selection_probabilities": {
     "fire": {
       "min": 1.0,
@@ -48,11 +48,11 @@
           42.111
         ],
         "sample_q01_q50_q99": [
-          9.512,
-          24.311,
-          42.09
+          9.516,
+          24.306,
+          42.098
         ],
-        "max_gap_share_of_range": 0.0007,
+        "max_gap_share_of_range": 0.0008,
         "ok": true
       },
       "vpd_prev": {
@@ -62,11 +62,11 @@
           70.47
         ],
         "sample_q01_q50_q99": [
-          3.004,
-          18.655,
-          70.321
+          2.995,
+          18.656,
+          70.378
         ],
-        "max_gap_share_of_range": 0.0019,
+        "max_gap_share_of_range": 0.0012,
         "ok": true
       },
       "wind_prev": {
@@ -77,10 +77,10 @@
         ],
         "sample_q01_q50_q99": [
           1.1,
-          3.172,
-          7.2
+          3.17,
+          7.218
         ],
-        "max_gap_share_of_range": 0.0043,
+        "max_gap_share_of_range": 0.0034,
         "ok": true
       },
       "dry_days": {
@@ -101,14 +101,14 @@
         "population_q01_q50_q99": [
           0.25,
           24.143,
-          210.438
+          210.437
         ],
         "sample_q01_q50_q99": [
           0.0,
-          24.095,
-          209.878
+          24.082,
+          208.853
         ],
-        "max_gap_share_of_range": 0.0006,
+        "max_gap_share_of_range": 0.0016,
         "ok": true
       },
       "npv": {
@@ -118,11 +118,11 @@
           68.981
         ],
         "sample_q01_q50_q99": [
-          5.574,
-          40.636,
-          68.956
+          5.534,
+          40.644,
+          68.855
         ],
-        "max_gap_share_of_range": 0.0002,
+        "max_gap_share_of_range": 0.0011,
         "ok": true
       }
     },
@@ -130,17 +130,17 @@
     "expand_to_2_million": false
   },
   "source_versions": {
-    "git_commit": "aa039ee3bdfffc80f46e22878beb592330f1ddf9",
+    "git_commit": "7318114ccfd6ce049c65441167b47ecb2f7c135e",
     "download_manifest": "inventory/download_manifest.csv",
     "pixel_day_files_sha256": {
-      "2002": "3f054dbfbeb5cd4cecb886ec7bb0e24a3f526f1365d45000c3d8b8d0d9f02707",
-      "2003": "687842ea943764821d7bd090c031abb8005d4499c373a2d42d6eada9bad7dfd4",
-      "2004": "ed3aed7fe5eb3dfd4dd019cfd7938811e4e10fb6564886289b06f5892d4d8f70",
-      "2005": "b862fd733a5d8400c4dbe42226233cf3ff6133a935bc85d853ddf8a538f3fc7d",
-      "2006": "34be86adca42cf4c4cad9842ea0aaeceb94ea0f907e6f74fbd6a214102ef2c44",
-      "2007": "5ca7249beddcd3a66c62b3eec0dc8375f8b1d9e145eb2478859a5c6c02e47b88",
-      "2008": "ce1bb51ea8e5df33c198a6181a307e46cd68a391b44692d66f1a6dec431bdb99"
+      "2002": "488ad104e887174e00eefdca2e31e3f820f2b33398a59f317f9852e95ee07b9d",
+      "2003": "ca2509833920dc316603d1c40aebe5820f38eca1fd06d975cb2cadb5a8d9ad0f",
+      "2004": "36eacf470e27c6aff6f93eeabff91ba7213d70c676a0206213099ab23ae8f90a",
+      "2005": "30d6d60c769c1ecf1bdaf7416bc369b96410646fe508b58c86008fd79d6ce973",
+      "2006": "99b5c17e4252e95f3befd8a450f4477ec56e510e951dafc44b6febeb2aea9464",
+      "2007": "809f69c17c6c3431b71f7a4ce56b61c7b91a5b4aa3ce623e3a03aa2e57bae8e7",
+      "2008": "6102ea6d4b09aa50bb2f4ea92a4d47d3146be257b77ee5a7d402b11fbe09a57a"
     }
   },
-  "sample_file_sha256": "2f62b9c7b78b843d724c1b910b9edade27121e0c6b47586765ef3bfa741ecd3c"
+  "sample_file_sha256": "3f27cf2379d924d916e405054b838fa514549969f91b5d563ad772cffb297b6c"
 }

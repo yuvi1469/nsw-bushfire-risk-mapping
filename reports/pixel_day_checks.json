@@ -1,0 +1,111 @@
+{
+  "years": {
+    "2002": {
+      "rows": 4898904,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2003": {
+      "rows": 11687626,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2004": {
+      "rows": 11718193,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2005": {
+      "rows": 11687816,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2006": {
+      "rows": 11687189,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2007": {
+      "rows": 11687532,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2008": {
+      "rows": 10713301,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2010": {
+      "rows": 992496,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2011": {
+      "rows": 11684593,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2012": {
+      "rows": 11718944,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2013": {
+      "rows": 10695802,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2015": {
+      "rows": 992713,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2016": {
+      "rows": 11719343,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    },
+    "2017": {
+      "rows": 992744,
+      "duplicate_cell_dates": 0,
+      "missing_required": 0,
+      "weather_is_previous_day": true,
+      "vegetation_before_target_month": true
+    }
+  },
+  "total_rows": 122877196,
+  "expected_rows_before_exclusions": 122927302,
+  "spot_checks": {
+    "values_checked": 1470,
+    "mismatches": 0,
+    "mismatch_examples": []
+  },
+  "burned_rows": 902035,
+  "burned_share": 0.007340947135544987
+}

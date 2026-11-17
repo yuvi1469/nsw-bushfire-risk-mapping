@@ -12,7 +12,7 @@ Completed 17 November 2026 with `scripts/11_build_pixel_day_table.py` and checke
 | Rows | **122,877,196** |
 | Labelled burned (`burned = 1`) | **902,035** (0.73%) |
 | Rows with any burned pixel | 2,689,197 |
-| Fields | 36 (see `docs/field_dictionary.md`) |
+| Fields | 38 (see `docs/field_dictionary.md`) |
 
 The aligned rasters and gridded layers in `data/processed/` remain the source of truth; the table can be rebuilt from them.
 

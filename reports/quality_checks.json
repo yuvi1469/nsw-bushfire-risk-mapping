@@ -1,0 +1,129 @@
+{
+  "ranges": {
+    "max_temp": {
+      "checked": 122927302,
+      "below": 0,
+      "above": 0,
+      "min": -5.678029537200928,
+      "max": 48.5
+    },
+    "min_temp": {
+      "checked": 122927302,
+      "below": 0,
+      "above": 0,
+      "min": -14.30981731414795,
+      "max": 33.0
+    },
+    "daily_rain": {
+      "checked": 122927302,
+      "below": 0,
+      "above": 0,
+      "min": 0.0,
+      "max": 545.9494018554688
+    },
+    "vp": {
+      "checked": 122927302,
+      "below": 0,
+      "above": 0,
+      "min": 0.5961929559707642,
+      "max": 32.900001525878906
+    },
+    "wind_10m": {
+      "checked": 122927302,
+      "below": 0,
+      "above": 0,
+      "min": 0.0,
+      "max": 19.00987434387207
+    },
+    "phot_veg": {
+      "checked": 5602826,
+      "below": 0,
+      "above": 2,
+      "min": 0.0,
+      "max": 100.71551513671875
+    },
+    "nphot_veg": {
+      "checked": 5602826,
+      "below": 0,
+      "above": 2,
+      "min": 0.0,
+      "max": 100.86607360839844
+    },
+    "bare_soil": {
+      "checked": 5602826,
+      "below": 0,
+      "above": 3,
+      "min": 0.0,
+      "max": 111.0
+    },
+    "tot_cov": {
+      "checked": 5602826,
+      "below": 0,
+      "above": 358,
+      "min": 0.0,
+      "max": 102.34862518310547
+    },
+    "elevation_mean": {
+      "checked": 32029,
+      "below": 0,
+      "above": 0,
+      "min": -0.3014895021915436,
+      "max": 1971.065185546875
+    },
+    "slope_mean": {
+      "checked": 32029,
+      "below": 0,
+      "above": 0,
+      "min": 0.0,
+      "max": 29.560365676879883
+    },
+    "slope_p90": {
+      "checked": 32029,
+      "below": 0,
+      "above": 0,
+      "min": 0.0,
+      "max": 44.21235656738281
+    },
+    "aspect_sin": {
+      "checked": 32029,
+      "below": 0,
+      "above": 0,
+      "min": -0.9999921321868896,
+      "max": 0.9999645948410034
+    },
+    "aspect_cos": {
+      "checked": 32029,
+      "below": 0,
+      "above": 0,
+      "min": -0.9968380331993103,
+      "max": 0.9998135566711426
+    }
+  },
+  "edge_cells": {
+    "vegetation_cells_mean_valid_fraction_below_0.5": 72,
+    "dem_cells_partly_covered": 0
+  },
+  "vegetation_fraction_sum": {
+    "median": 97.60684204101562,
+    "share_outside_97_103": 0.3245671110556059
+  },
+  "fire_label": {
+    "cell_days_with_any_burn": 2689570,
+    "cell_days_burned_at_threshold": 902162,
+    "burned_by_type": {
+      "unknown": 896933,
+      "wildfire": 4990,
+      "prescribed": 239
+    },
+    "burned_fraction_quantiles": {
+      "0.1": 0.0025,
+      "0.5": 0.0053,
+      "0.9": 0.0328,
+      "0.99": 0.1894
+    }
+  },
+  "valid_static_cells": 32029,
+  "nsw_cells": 32029,
+  "study_days": 3838,
+  "possible_cell_days": 122927302
+}

@@ -1,0 +1,71 @@
+year,reason,rows
+2002,missing pv,1533
+2002,missing npv,1533
+2002,missing bare_soil,1533
+2002,missing total_cover,1533
+2002,any required predictor missing (rows dropped),1533
+2003,missing pv,2959
+2003,missing npv,2959
+2003,missing bare_soil,2959
+2003,missing total_cover,2959
+2003,any required predictor missing (rows dropped),2959
+2004,missing pv,4421
+2004,missing npv,4421
+2004,missing bare_soil,4421
+2004,missing total_cover,4421
+2004,any required predictor missing (rows dropped),4421
+2005,missing pv,2769
+2005,missing npv,2769
+2005,missing bare_soil,2769
+2005,missing total_cover,2769
+2005,any required predictor missing (rows dropped),2769
+2006,missing pv,3396
+2006,missing npv,3396
+2006,missing bare_soil,3396
+2006,missing total_cover,3396
+2006,any required predictor missing (rows dropped),3396
+2007,missing pv,3053
+2007,missing npv,3053
+2007,missing bare_soil,3053
+2007,missing total_cover,3053
+2007,any required predictor missing (rows dropped),3053
+2008,missing pv,16414
+2008,missing npv,16414
+2008,missing bare_soil,16414
+2008,missing total_cover,16414
+2008,any required predictor missing (rows dropped),16414
+2010,missing pv,403
+2010,missing npv,403
+2010,missing bare_soil,403
+2010,missing total_cover,403
+2010,any required predictor missing (rows dropped),403
+2011,missing pv,5992
+2011,missing npv,5992
+2011,missing bare_soil,5992
+2011,missing total_cover,5992
+2011,any required predictor missing (rows dropped),5992
+2012,missing pv,3670
+2012,missing npv,3670
+2012,missing bare_soil,3670
+2012,missing total_cover,3670
+2012,any required predictor missing (rows dropped),3670
+2013,missing pv,1884
+2013,missing npv,1884
+2013,missing bare_soil,1884
+2013,missing total_cover,1884
+2013,any required predictor missing (rows dropped),1884
+2015,missing pv,186
+2015,missing npv,186
+2015,missing bare_soil,186
+2015,missing total_cover,186
+2015,any required predictor missing (rows dropped),186
+2016,missing pv,3271
+2016,missing npv,3271
+2016,missing bare_soil,3271
+2016,missing total_cover,3271
+2016,any required predictor missing (rows dropped),3271
+2017,missing pv,155
+2017,missing npv,155
+2017,missing bare_soil,155
+2017,missing total_cover,155
+2017,any required predictor missing (rows dropped),155

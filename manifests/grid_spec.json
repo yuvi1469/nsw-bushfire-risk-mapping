@@ -1,0 +1,12 @@
+{
+  "crs": "EPSG:8058",
+  "cell_size_m": 5000.0,
+  "x_min": 8710000.0,
+  "y_max": 5050000.0,
+  "width": 249,
+  "height": 206,
+  "nsw_cells": 32029,
+  "rule": "Cell is in NSW when its centre is inside the ABS 2021 NSW mainland polygon",
+  "nsw_area_km2_mainland_polygon": 800596.6,
+  "nsw_area_km2_all_parts": 800623.6
+}

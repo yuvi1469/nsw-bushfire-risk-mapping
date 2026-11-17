@@ -28,6 +28,7 @@ OUT = PROCESSED / "pixel_day"
 DRY_DAY_MM = 2.0
 BLOCK_CELLS = 20  # 100 km spatial blocks for splitting and stratification
 VEG_PARTIAL = 0.5
+SMALL_BURN = 0.05
 
 WEATHER = ["max_temp", "min_temp", "daily_rain", "vp", "wind_10m"]
 VEGETATION = {"phot_veg": "pv", "nphot_veg": "npv", "bare_soil": "bare_soil", "tot_cov": "total_cover"}
@@ -153,6 +154,11 @@ def main():
             for name, values in columns.items():
                 table[name] = values.reshape(-1)
             table["veg_partial"] = (table["veg_valid_fraction"] < VEG_PARTIAL).astype("int8")
+            # Burn-quality flags (readiness check): burned cell-days not matched to an NPWS
+            # polygon, and burned cell-days covering less than 5% of the cell.
+            burned = table["burned"] == 1
+            table["burn_unconfirmed"] = (burned & (table["burn_type"] == BURN_TYPES.index("unknown"))).astype("int8")
+            table["burn_small"] = (burned & (table["burned_fraction"] < SMALL_BURN)).astype("int8")
 
             frame = pd.DataFrame(table)
             missing = frame[REQUIRED].isna()

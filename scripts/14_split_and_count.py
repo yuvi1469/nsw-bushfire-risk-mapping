@@ -28,12 +28,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np
 import pandas as pd
 import xarray as xr
-from pyproj import Transformer
 
-from grid import OUTPUTS, PROCESSED
+
+from grid import OUTPUTS, PROCESSED, cell_centres, load_grid
 
 SEED = 20261117
 HOLDOUT_SHARE = 0.20
+BLOCK_CELLS = 20  # must match 11_build_pixel_day_table.py
 PERIODS = {"train": ("2002-08-01", "2008-11-30"), "validation": ("2010-12-01", "2013-11-30"), "test": ("2015-12-01", "2017-01-31")}
 REGIONS = [141, 144, 147, 150, 154]
 REGION_NAMES = ["far_west", "west", "central", "east"]
@@ -49,9 +50,19 @@ HISTOGRAMS = {
 
 
 def cell_table():
-    first = pd.read_parquet(PROCESSED / "pixel_day" / "2003" / "part-0.parquet", columns=["cell_id", "x", "y", "block_id"]).drop_duplicates("cell_id")
-    lon, _ = Transformer.from_crs("EPSG:8058", "EPSG:4326", always_xy=True).transform(first["x"].values, first["y"].values)
-    cells = first.assign(lon=lon).sort_values("cell_id").reset_index(drop=True)
+    # Built from the grid, not the table: a few lake cells have no rows in some years.
+    spec, cell_id, _ = load_grid()
+    x, y, lon, _ = cell_centres(spec)
+    inside = cell_id >= 0
+    rows, cols = np.nonzero(inside)
+    blocks_per_row = int(np.ceil(spec["width"] / BLOCK_CELLS))
+    cells = pd.DataFrame({
+        "cell_id": cell_id[inside],
+        "x": x[inside],
+        "y": y[inside],
+        "block_id": (rows // BLOCK_CELLS) * blocks_per_row + cols // BLOCK_CELLS,
+        "lon": lon[inside],
+    }).sort_values("cell_id").reset_index(drop=True)
     cells["region"] = pd.cut(cells["lon"], REGIONS, labels=REGION_NAMES).astype(str)
 
     with xr.open_dataset(PROCESSED / "monthly" / "vegetation.nc") as veg:

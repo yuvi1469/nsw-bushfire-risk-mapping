@@ -26,6 +26,10 @@ Source: TERN Burnt Area and Approximate Day of Burn, MODIS (`scripts/09_fire_lab
 | `burned_pixels` | int32 | Number of 250 m pixels with burn date t | No: post-event |
 | `burn_type` | category | `none` (no burned pixel), `unknown` (no NPWS match), `wildfire`, `prescribed` | No: post-event; use to filter labels |
 | `share_wildfire`, `share_prescribed` | float32 | Share of burned pixels inside NPWS wildfire or prescribed-burn polygons of the same season | No: post-event |
+| `burn_unconfirmed` | int8 | Quality flag: 1 when `burned = 1` and no NPWS polygon of the same season matches (ambiguous detection) | No: use to filter labels |
+| `burn_small` | int8 | Quality flag: 1 when `burned = 1` and `burned_fraction < 0.05` (low-quality, small detection) | No: use to filter labels |
+
+The 1 million row sample (`data/processed/sample/sample_1000000.parquet`) adds five fields: `region` and `veg_band` (sampling strata), `spatial_holdout`, `partition` and `sample_weight` (stratum population / stratum sample).
 
 ## Weather (day t-1)
 

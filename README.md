@@ -18,7 +18,8 @@ Builds a historical pixel-day dataset for New South Wales, following the *NSW Bu
 | `data/processed/` | Aligned maps and the pixel-day table | No |
 | `outputs/` | Generated maps and reports | No |
 | `splits/` | Train, validation and test assignments | Yes |
-| `manifests/` | Sample manifest, strata plan and pilot checks | Yes |
+| `manifests/` | Grid specification, sample manifest, strata plan and pilot checks | Yes |
+| `reports/` | Check results, counts and missingness tables | Yes |
 
 Data files are too large for GitHub, so they stay on the local machine.
 
@@ -58,8 +59,10 @@ Then run the scripts in `scripts/` in number order with `.venv/Scripts/python`. 
 | `13_pilot_extract.py` | 5.1: 30,000 row pilot, every value rechecked |
 | `14_split_and_count.py` | 5.2-5.3: holdouts and population counts |
 | `15_draw_sample.py` | 5.4-5.6: seeded 1 million row sample and coverage audit |
+| `16_export_rasters.py` | 7: aligned layers and label as georeferenced rasters |
+| `17_readiness_checks.py` | 6: the report's readiness checklist |
 
-Notes for each step are in `docs/`, and the table's fields are described in `docs/field_dictionary.md`.
+Notes for each step are in `docs/`; `docs/step7_outputs.md` lists every required output and where it is, and the table's fields are described in `docs/field_dictionary.md`.
 
 ## Data sources
 

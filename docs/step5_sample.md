@@ -21,16 +21,16 @@ The report asks for a temporal holdout plus spatial blocks, with the test set se
 
 | Partition | Dates | Cells | Rows | Burned | Prevalence |
 |---|---|---|---|---|---|
-| Train | 1 Aug 2002 - 30 Nov 2008 | Not held out | 58,749,227 | 440,370 | 0.75% |
-| Validation | 1 Dec 2010 - 30 Nov 2013 | Not held out | 27,828,036 | 236,115 | 0.85% |
+| Train | 1 Aug 2002 - 30 Nov 2008 | Not held out | 58,749,565 | 440,373 | 0.75% |
+| Validation | 1 Dec 2010 - 30 Nov 2013 | Not held out | 27,828,643 | 236,115 | 0.85% |
 | Test | 1 Dec 2015 - 31 Jan 2017 | Held out | 2,836,356 | 15,735 | 0.55% |
-| Unused | Held-out cells in train or validation periods; other cells in the test period | | 33,462,601 | 209,812 | |
+| Unused | Held-out cells in train or validation periods; other cells in the test period | | 33,462,632 | 209,812 | |
 
 - **Spatial holdout:** 20% of the 100 km blocks in each longitude region were chosen at random (seed 20261117): 20 of 102 blocks, 6,627 of 32,029 cells.
 - **Separation:** train and test share no cells and no dates. Train and validation share cells but not dates.
 - **Prevalence:** validation and test are kept whole, so they keep their real fire prevalence.
 
-Assignments are in `splits/cells.csv` (`spatial_holdout` per cell) and `splits/periods.json`.
+Assignments are in `splits/cells.csv` (`spatial_holdout` per cell, built from the grid so all 32,029 cells are listed) and `splits/periods.json`.
 
 ## 5.3 Eligible population counts
 
@@ -55,26 +55,26 @@ Central mid-cover cells, largely the cropping belt, hold 41% of training fire ro
 
 Rules fixed before drawing (`scripts/15_draw_sample.py`):
 - **Source:** the training partition only.
-- **Fire rows:** keep all if they fit in half the sample. 440,370 fit, so **all are kept**.
-- **Unburned rows:** fill the remaining 559,630, allocated in proportion to each stratum (year x month x region x veg_band; 912 strata), then chosen at random within the stratum.
+- **Fire rows:** keep all if they fit in half the sample. 440,373 fit, so **all are kept**.
+- **Unburned rows:** fill the remaining 559,627, allocated in proportion to each stratum (year x month x region x veg_band; 912 strata), then chosen at random within the stratum.
 - **Seed:** 20261117, with a separate random stream per year.
 - **Weights:** stratum population / stratum sample, separately for fire and unburned rows.
 
 | Result | Value |
 |---|---|
 | Rows | **1,000,000** |
-| Fire rows | 440,370 (44.0% unweighted) |
-| Unburned rows | 559,630 |
+| Fire rows | 440,373 (44.0% unweighted) |
+| Unburned rows | 559,627 |
 | Weighted prevalence | 0.750%, equal to the training population |
-| Weighted rows | 58,749,227, equal to the training population |
+| Weighted rows | 58,749,565, equal to the training population |
 | Unburned selection probability | 0.83% to 1.08% by stratum |
 | Duplicate cell-dates | 0 |
 | Rows from held-out cells or outside the training dates | 0 |
 
-Fire rows by NPWS match: 437,304 unknown, 2,955 wildfire, 111 prescribed.
+Fire rows by NPWS match: 437,307 unknown, 2,955 wildfire, 111 prescribed.
 
 Files:
-- sample: `data/processed/sample/sample_1000000.parquet` (61 MB, 41 columns: the table's 36 plus `region`, `veg_band`, `spatial_holdout`, `sample_weight` and `partition`);
+- sample: `data/processed/sample/sample_1000000.parquet` (43 columns: the table's 38 plus `region`, `veg_band`, `spatial_holdout`, `sample_weight` and `partition`);
 - manifest: `manifests/sample_manifest_1000000.json` (seed, strata, selection probabilities, inclusion counts, git commit and SHA-256 of every source table file);
 - per-stratum plan: `manifests/sample_strata_1000000.csv`.
 
@@ -84,11 +84,11 @@ The pre-set rule expands the sample only if a stratum with at least 1,000 unburn
 
 | Feature | Population 1% / 50% / 99% | Sample 1% / 50% / 99% | Largest gap (share of range) |
 |---|---|---|---|
-| max_temp_prev | 9.5 / 24.3 / 42.1 | 9.5 / 24.3 / 42.1 | 0.07% |
-| vpd_prev | 3.0 / 18.6 / 70.5 | 3.0 / 18.7 / 70.3 | 0.19% |
-| wind_prev | 1.07 / 3.19 / 7.29 | 1.10 / 3.17 / 7.20 | 0.43% |
+| max_temp_prev | 9.5 / 24.3 / 42.1 | 9.5 / 24.3 / 42.1 | 0.08% |
+| vpd_prev | 3.0 / 18.6 / 70.5 | 3.0 / 18.7 / 70.4 | 0.12% |
+| wind_prev | 1.07 / 3.19 / 7.29 | 1.10 / 3.17 / 7.22 | 0.34% |
 | dry_days | 0.1 / 8.5 / 30.9 | 0 / 8 / 30 | 3.0% (population values are read from 1-day histogram bins) |
-| rain_30d | 0.3 / 24.1 / 210.4 | 0 / 24.1 / 209.9 | 0.06% |
-| npv | 5.6 / 40.6 / 69.0 | 5.6 / 40.6 / 69.0 | 0.02% |
+| rain_30d | 0.3 / 24.1 / 210.4 | 0 / 24.1 / 208.9 | 0.16% |
+| npv | 5.6 / 40.6 / 69.0 | 5.6 / 40.6 / 68.9 | 0.11% |
 
 Strata missed: none. **The audit passed, so the sample stays at 1 million.** Running `scripts/15_draw_sample.py 2000000` would draw a 2 million row sample with the same rules if needed later.
