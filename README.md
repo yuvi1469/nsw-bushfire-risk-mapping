@@ -61,6 +61,7 @@ Then run the scripts in `scripts/` in number order with `.venv/Scripts/python`. 
 | `15_draw_sample.py` | 5.4-5.6: seeded 1 million row sample and coverage audit |
 | `16_export_rasters.py` | 7: aligned layers and label as georeferenced rasters |
 | `17_readiness_checks.py` | 6: the report's readiness checklist |
+| `18_make_figures.py` | PNG images of the runs (`figures/runs/`) and main outputs (`figures/outputs/`) for sharing |
 
 Or run everything in one go with `.venv/Scripts/python scripts/run_all.py`, which runs all 17 scripts in order, stops at the first failure and logs each step to `outputs/logs/`. `scripts/fingerprint.py <file.json>` records hashes of the main results so two runs can be compared. A full rerun on 18 November 2026 took 79 minutes (with the downloads already present) and reproduced the previous results exactly: the same sample, labels, table, counts and holdouts, and all readiness checks passed.
 
