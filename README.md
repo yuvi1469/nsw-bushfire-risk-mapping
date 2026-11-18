@@ -65,7 +65,7 @@ Then run the scripts in `scripts/` in number order with `.venv/Scripts/python`. 
 
 Or run everything in one go with `.venv/Scripts/python scripts/run_all.py`, which runs all 17 scripts in order, stops at the first failure and logs each step to `outputs/logs/`. `scripts/fingerprint.py <file.json>` records hashes of the main results so two runs can be compared. A full rerun on 18 November 2026 took 79 minutes (with the downloads already present) and reproduced the previous results exactly: the same sample, labels, table, counts and holdouts, and all readiness checks passed.
 
-A one-page summary for readers is in `docs/project_summary.md`. Notes for each step are in `docs/`; `docs/step7_outputs.md` lists every required output and where it is, and the table's fields are described in `docs/field_dictionary.md`.
+A one-page summary for readers is in `docs/project_summary.md`, and step-by-step run instructions for a new computer are in `docs/how_to_run.md`. Notes for each step are in `docs/`; `docs/step7_outputs.md` lists every required output and where it is, and the table's fields are described in `docs/field_dictionary.md`.
 
 ## Data sources
 
